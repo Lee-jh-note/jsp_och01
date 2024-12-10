@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+<script type="text/javascript">
+	function chk() {
+		if (!frm.name.value) {
+			alert("이름 없음")
+			frm.name.focus();
+			return false;
+		}
+		if (!frm.id.value) {
+			alert("id 없음")
+			frm.id.focus();
+			return false;
+		}
+		if (!frm.password.value) {
+			alert("암호 없음")
+			frm.password.focus();
+			return false;
+		}
+		return true;
+	}
+</script>
+</head>
+<body>
+	<h2>개인정보</h2>
+	<form action="Person" method="post" name="frm" onsubmit="return chk()">
+		<table border="1" bgcolor="yellow">
+			<tr>
+				<td>이름</td>
+				<td><input type="text" name="name"></td>
+			</tr>
+			<tr>
+				<td>아이디</td>
+				<td><input type="text" name="id"></td>
+			</tr>
+			<tr>
+				<td>암호</td>
+				<td><input type="password" name="password"></td>
+			</tr>
+			<tr>
+				<td>성별</td>
+				<td>남자<input type="radio" name="gender" checked="checked"
+					value="남자"> <br> 여자<input type="radio" name="gender"
+					value="여자">
+				</td>
+			</tr>
+			<tr>
+				<td>메일 수신</td>
+				<td>공지<input type="checkbox" name="notice" value="공지">
+					<br> 광고<input type="checkbox" name="notice" value="광고">
+					<br> 배송<input type="checkbox" name="notice" value="배송">
+				</td>
+			</tr>
+			<tr>
+				<td>직업</td>
+				<td><select name="job">
+						<option value="가수">가수</option>
+						<option value="장군" selected="selected">장군</option>
+						<option value="공무원">공무원</option>
+				</select></td>
+			</tr>
+		</table>
+		<input type="submit" value="완료">
+		 <input type="rest" value="입력 취소">
+	</form>
+</body>
+</html>
