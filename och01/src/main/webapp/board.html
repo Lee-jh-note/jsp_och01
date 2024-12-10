@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+<script type="text/javascript">
+	// 타이틀, 작성자, 내용
+        function chk() {
+            if (!frm.title.value) {
+                alert("제목 없음")
+                frm.title.focus();
+                return false;
+            }
+            if (!frm.writer.value) {
+                alert("작성자 없음")
+                frm.writer.focus();
+                return false;
+            }
+            if (!frm.content.value) {
+                alert("내용 없음")
+                frm.content.focus();
+                return false;
+            }
+            return true;
+        }
+</script>
+<body>
+	<h1>게시판</h1>
+	<form action="Board" name="frm" method="post" onsubmit="return chk()">
+		<table border="1">
+			<tr>
+				<td>제목</td>
+				<td><input type="text" name="title"></td>
+			</tr>
+			<tr>
+				<td>작성자</td>
+				<td><input type="text" name="writer"></td>
+			</tr>
+			<tr>
+				<td>제목</td>
+				<td><textarea cols="40" rows="10" name="content"> </textarea></td>
+			</tr>
+			<tr>
+				<td colspan="100"><input type="submit" value="완료"></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

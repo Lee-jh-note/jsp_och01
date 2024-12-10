@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function chk() {
+		// 밸류가 없을때 
+		if (!frm.num.value) {
+			alert("입력 안됨");
+			frm.num.focus();
+			return false;
+		}
+		// 입력값이 num이 아닐때
+		if (isNaN(frm.num.value)) {
+			alert("숫자가 아닌듯")
+			frm.num.focus();
+			frm.num.value = ""; // 잘못 들어온 입력 초기화
+			return false;
+		}
+		return true;
+
+	}
+</script>
+</head>
+<body>
+	<h1>숫자를 입력하세요</h1>
+	<form action="Add3" name="frm" method="post" onsubmit="return chk()">
+		숫자 : <input type="text" name="num">
+		<p>
+			문자 : <input type="text" name="han">
+		<p>
+			<input type="submit" value="확인">
+	</form>
+</body>
+</html>
